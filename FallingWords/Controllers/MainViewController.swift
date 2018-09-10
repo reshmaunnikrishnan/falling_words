@@ -15,7 +15,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // To see the realm DB use
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
     override func didReceiveMemoryWarning() {

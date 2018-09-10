@@ -115,7 +115,6 @@
 		F74CEE832146CF12000FC325 /* FallingWords */ = {
 			isa = PBXGroup;
 			children = (
-				F765825E2146D5D3007EA7C3 /* Stores */,
 				F74CEE842146CF12000FC325 /* AppDelegate.swift */,
 				F74CEE8B2146CF13000FC325 /* Assets.xcassets */,
 				F76582582146D203007EA7C3 /* Controllers */,
@@ -123,6 +122,7 @@
 				F74CEE8D2146CF13000FC325 /* LaunchScreen.storyboard */,
 				F74CEE882146CF12000FC325 /* Main.storyboard */,
 				F765825D2146D5C7007EA7C3 /* Models */,
+				F765825E2146D5D3007EA7C3 /* Stores */,
 			);
 			path = FallingWords;
 			sourceTree = "<group>";

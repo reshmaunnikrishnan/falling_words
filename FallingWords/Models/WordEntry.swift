@@ -14,4 +14,19 @@ class WordEntry: Object {
     @objc dynamic var text_spa:String = ""
     
     @objc dynamic var wrong_text_spa:String = ""
+    
+    // Primary Key required for saving
+    override class func primaryKey() -> String? {
+        return "text_eng"
+    }
+    
+    func save() -> WordEntry {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(self, update: true)
+        }
+        
+        return self
+    }
 }

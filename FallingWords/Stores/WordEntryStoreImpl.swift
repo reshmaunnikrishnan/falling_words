@@ -21,7 +21,7 @@ class WordEntryStoreImpl: WordEntryStore {
             }
             .map({ (response, json) -> [WordEntry] in
                 guard let items = json as? [AnyObject] else {return []}
-                return items.map {WordEntry(value: $0)}
+                return items.map {WordEntry(value: $0).save()}
             })
             .asDriver(onErrorJustReturn: [])
     }
