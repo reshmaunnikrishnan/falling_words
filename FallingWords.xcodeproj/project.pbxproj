@@ -10,11 +10,14 @@
 		84E4B8B248E038429D404BD9 /* Pods_FallingWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1850161EC2B366AA82785A9D /* Pods_FallingWords.framework */; };
 		9841955B745B77B349BB5EE6 /* Pods_FallingWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A025764285BD965829B5A75 /* Pods_FallingWordsTests.framework */; };
 		F74CEE852146CF12000FC325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CEE842146CF12000FC325 /* AppDelegate.swift */; };
-		F74CEE872146CF12000FC325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CEE862146CF12000FC325 /* ViewController.swift */; };
+		F74CEE872146CF12000FC325 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CEE862146CF12000FC325 /* MainViewController.swift */; };
 		F74CEE8A2146CF12000FC325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74CEE882146CF12000FC325 /* Main.storyboard */; };
 		F74CEE8C2146CF13000FC325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74CEE8B2146CF13000FC325 /* Assets.xcassets */; };
 		F74CEE8F2146CF13000FC325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74CEE8D2146CF13000FC325 /* LaunchScreen.storyboard */; };
 		F74CEE9A2146CF13000FC325 /* FallingWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CEE992146CF13000FC325 /* FallingWordsTests.swift */; };
+		F765825A2146D572007EA7C3 /* WordEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582592146D572007EA7C3 /* WordEntryStore.swift */; };
+		F765825C2146D5AC007EA7C3 /* WordEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765825B2146D5AC007EA7C3 /* WordEntry.swift */; };
+		F76582602146D60E007EA7C3 /* WordEntryStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765825F2146D60E007EA7C3 /* WordEntryStoreImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 		E423E6CA09864C950A9DEDA4 /* Pods-FallingWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingWordsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FallingWordsTests/Pods-FallingWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F74CEE812146CF12000FC325 /* FallingWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74CEE842146CF12000FC325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F74CEE862146CF12000FC325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F74CEE862146CF12000FC325 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F74CEE892146CF12000FC325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F74CEE8B2146CF13000FC325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F74CEE8E2146CF13000FC325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		F74CEE952146CF13000FC325 /* FallingWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74CEE992146CF13000FC325 /* FallingWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingWordsTests.swift; sourceTree = "<group>"; };
 		F74CEE9B2146CF13000FC325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76582592146D572007EA7C3 /* WordEntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryStore.swift; sourceTree = "<group>"; };
+		F765825B2146D5AC007EA7C3 /* WordEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntry.swift; sourceTree = "<group>"; };
+		F765825F2146D60E007EA7C3 /* WordEntryStoreImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryStoreImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +115,14 @@
 		F74CEE832146CF12000FC325 /* FallingWords */ = {
 			isa = PBXGroup;
 			children = (
+				F765825E2146D5D3007EA7C3 /* Stores */,
 				F74CEE842146CF12000FC325 /* AppDelegate.swift */,
-				F74CEE862146CF12000FC325 /* ViewController.swift */,
-				F74CEE882146CF12000FC325 /* Main.storyboard */,
 				F74CEE8B2146CF13000FC325 /* Assets.xcassets */,
-				F74CEE8D2146CF13000FC325 /* LaunchScreen.storyboard */,
+				F76582582146D203007EA7C3 /* Controllers */,
 				F74CEE902146CF13000FC325 /* Info.plist */,
+				F74CEE8D2146CF13000FC325 /* LaunchScreen.storyboard */,
+				F74CEE882146CF12000FC325 /* Main.storyboard */,
+				F765825D2146D5C7007EA7C3 /* Models */,
 			);
 			path = FallingWords;
 			sourceTree = "<group>";
@@ -126,6 +134,31 @@
 				F74CEE9B2146CF13000FC325 /* Info.plist */,
 			);
 			path = FallingWordsTests;
+			sourceTree = "<group>";
+		};
+		F76582582146D203007EA7C3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F74CEE862146CF12000FC325 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F765825D2146D5C7007EA7C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F765825B2146D5AC007EA7C3 /* WordEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F765825E2146D5D3007EA7C3 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				F76582592146D572007EA7C3 /* WordEntryStore.swift */,
+				F765825F2146D60E007EA7C3 /* WordEntryStoreImpl.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,8 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74CEE872146CF12000FC325 /* ViewController.swift in Sources */,
+				F765825C2146D5AC007EA7C3 /* WordEntry.swift in Sources */,
+				F74CEE872146CF12000FC325 /* MainViewController.swift in Sources */,
 				F74CEE852146CF12000FC325 /* AppDelegate.swift in Sources */,
+				F76582602146D60E007EA7C3 /* WordEntryStoreImpl.swift in Sources */,
+				F765825A2146D572007EA7C3 /* WordEntryStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +555,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 782478PCZS;
 				INFOPLIST_FILE = FallingWords/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.babbel.FallingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -535,7 +574,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 782478PCZS;
 				INFOPLIST_FILE = FallingWords/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.babbel.FallingWords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -552,7 +594,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 782478PCZS;
 				INFOPLIST_FILE = FallingWordsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.babbel.FallingWordsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -570,7 +616,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 782478PCZS;
 				INFOPLIST_FILE = FallingWordsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.babbel.FallingWordsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
