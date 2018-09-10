@@ -17,6 +17,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var response: UILabel!
     @IBOutlet weak var answerCorrect: UIButton!
     @IBOutlet weak var answerWrong: UIButton!
+    @IBOutlet weak var score: UILabel!
     
     var viewModel:WordEntryViewModel!;
     
@@ -31,6 +32,8 @@ class QuestionViewController: UIViewController {
             .subscribe(onNext: { (newViewState, oldViewState) in
                 let newViewState = newViewState as! WordEntryViewState
                 let oldViewState = oldViewState as? WordEntryViewState
+                
+                self.score.text = String(newViewState.totalPoints)
                 
                 if newViewState.currentWordEntry != nil && oldViewState?.currentWordEntry != newViewState.currentWordEntry {
                     self.question.text = newViewState.currentWordEntry?.text_eng
