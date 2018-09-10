@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         // To see the realm DB use
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        // print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         self.viewModel = WordEntryViewModel().injectWordEntryStore(wordEntryStore: WordEntryStoreImpl())
         
@@ -47,17 +47,25 @@ class MainViewController: UIViewController {
                 self.activityIndicator.startAnimating()
                 
                 if oldViewState?.isDataLoaded == false && newViewState.isDataLoaded == true {
-                    self.navigationController?.pushViewController(self.questionVC, animated: true)
+                    if !(self.navigationController?.visibleViewController is QuestionViewController) {
+                        self.navigationController?.pushViewController(self.questionVC, animated: true)
+                    }
                 }
                 
                 if newViewState.isGameOver == true {
-                    self.navigationController?.pushViewController(self.finalVC, animated: true)
+                    if !(self.navigationController?.visibleViewController is FinalViewController) {
+                        self.navigationController?.pushViewController(self.finalVC, animated: true)
+                    }
                 }
             })
             .disposed(by: bag)
         
         viewModel.setViewState(viewstate: WordEntryViewState())
         
+        attachButtonEvents()
+    }
+    
+    private func attachButtonEvents() {
         startGame
             .rx
             .tap

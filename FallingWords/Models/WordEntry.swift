@@ -16,6 +16,7 @@ class WordEntry: Object {
     @objc dynamic var wrong_text_spa:String = ""
     
     @objc dynamic var is_answered:Bool = false
+    @objc dynamic var is_defaulted:Bool = false
     @objc dynamic var point:Int = 0
     
     private var randomAnswer:String? = nil
@@ -71,5 +72,15 @@ class WordEntry: Object {
         }
         
         return answerCorrect
+    }
+    
+    func markDoneDefaulting() -> Bool {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            self.is_defaulted = true
+        }
+        
+        return false
     }
 }

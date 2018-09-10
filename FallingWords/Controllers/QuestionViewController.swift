@@ -38,9 +38,30 @@ class QuestionViewController: UIViewController {
                 if newViewState.currentWordEntry != nil && oldViewState?.currentWordEntry != newViewState.currentWordEntry {
                     self.question.text = newViewState.currentWordEntry?.text_eng
                     self.option.text = newViewState.currentWordEntry?.possibleAnswer()
+                    
+                    self.option.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height * -1)
+                    
+                    UIView.animate(withDuration: 4, delay: 1, options: .curveLinear, animations: {
+                        self.option.transform = .identity
+                    }, completion: { finished in
+                        self.option.transform = CGAffineTransform(translationX: 0, y: 0)
+                        
+                        if self.viewModel.viewState?.currentWordEntryCorrect == nil {
+                            self.disableButtons()
+                            
+                            self.response.text = "Time is up. No points for you!"
+                            self.response.textColor = UIColor.gray
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                self.viewModel.execute(command: WordEntryViewModel.Command.AnswerAsDefault)
+                            }
+                        }
+                    })
                 }
                 
-                if newViewState.currentWordEntryCorrect != nil {
+                if newViewState.currentEntryAnswered() {
+                    self.option.layer.removeAllAnimations()
+                    
                     if newViewState.currentWordEntryCorrect == true {
                         self.response.text = "Good Job! That is the right answer!"
                         self.response.textColor = UIColor.green
@@ -51,15 +72,9 @@ class QuestionViewController: UIViewController {
                         self.response.textColor = UIColor.red
                     }
                     
-                    Observable<Int>
-                        .timer(
-                            RxTimeInterval(1),
-                            scheduler: MainScheduler.instance)
-                        .subscribe(onNext: { (_) in
-                            self.viewModel.execute(command: WordEntryViewModel.Command.FetchQuestion)
-                        })
-                        .disposed(by: self.bag)
-                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.viewModel.execute(command: WordEntryViewModel.Command.FetchQuestion)
+                    }
                 } else {
                     self.response.text = ""
                     self.enableButtons()
@@ -69,6 +84,10 @@ class QuestionViewController: UIViewController {
         
         self.viewModel.execute(command: WordEntryViewModel.Command.FetchQuestion)
         
+        attachButtonEvents()
+    }
+    
+    private func attachButtonEvents() {
         answerCorrect
             .rx
             .tap
@@ -90,7 +109,6 @@ class QuestionViewController: UIViewController {
                     data: false as AnyObject)
             })
             .disposed(by: bag)
-        
     }
     
     func disableButtons() {
