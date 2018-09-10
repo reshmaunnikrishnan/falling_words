@@ -62,6 +62,7 @@
 		F76582692146DD12007EA7C3 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
 		F765826B2146E334007EA7C3 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F765826D2146F15A007EA7C3 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		F794BF0B2147261A00B97CA4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +110,10 @@
 			children = (
 				F74CEE832146CF12000FC325 /* FallingWords */,
 				F74CEE982146CF13000FC325 /* FallingWordsTests */,
-				F74CEE822146CF12000FC325 /* Products */,
-				9FAF28DB435E398F70348D7D /* Pods */,
 				23BDB9080C1F09A8C6338493 /* Frameworks */,
+				9FAF28DB435E398F70348D7D /* Pods */,
+				F74CEE822146CF12000FC325 /* Products */,
+				F794BF0B2147261A00B97CA4 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
