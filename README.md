@@ -54,8 +54,10 @@ This project took about 8 hours to setup and implement
 - When a button is clicked, I disable all the buttons. This could have been done better with Rx
 - Restart once finished is missing
 - The score count does not immediately. It is only shown updated on the next question
+- No tests
 
 ### What would be the first thing to improve or add if there had been more time
 
+- Write tests
 - Restart Game once finished
 - Performance improvements
