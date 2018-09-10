@@ -15,18 +15,26 @@ struct WordEntryViewState: ViewState {
     let isLoading: Bool
     let isDataLoaded: Bool
     
+    var isGameOver: Bool
+    
     var currentWordEntry: WordEntry? = nil
     var currentWordEntryCorrect: Bool? = nil
 
     init(isLoading:Bool = false, isDataLoaded:Bool = false) {
         self.isLoading = isLoading
         self.isDataLoaded = isDataLoaded
+        self.isGameOver = false
     }
     
     mutating func setCurrentEntry() {
         let realm = try! Realm()
         
         self.currentWordEntry = realm.objects(WordEntry.self).filter("is_answered == false").first
+        self.currentWordEntryCorrect = nil
+        
+        if self.currentWordEntry == nil {
+            self.isGameOver = true
+        }
     }
     
     mutating func answerQuestion(answer: String) {

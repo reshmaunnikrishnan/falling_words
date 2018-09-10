@@ -118,6 +118,21 @@
             </objects>
             <point key="canvasLocation" x="487" y="-16"/>
         </scene>
+        <!--Final View Controller-->
+        <scene sceneID="lPH-4r-HF1">
+            <objects>
+                <viewController storyboardIdentifier="FinalViewController" id="ck3-wF-gK8" customClass="FinalViewController" customModule="FallingWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ux5-y8-0WM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="233-90-EaJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SY-HL-k3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="-22"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="1417" height="307"/>

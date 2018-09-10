@@ -23,6 +23,7 @@
 		F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */; };
 		F765826A2146DD12007EA7C3 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582692146DD12007EA7C3 /* Array+Sample.swift */; };
 		F765826C2146E334007EA7C3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765826B2146E334007EA7C3 /* QuestionViewController.swift */; };
+		F765826E2146F15A007EA7C3 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765826D2146F15A007EA7C3 /* FinalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryViewModel.swift; sourceTree = "<group>"; };
 		F76582692146DD12007EA7C3 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
 		F765826B2146E334007EA7C3 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		F765826D2146F15A007EA7C3 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				F74CEE862146CF12000FC325 /* MainViewController.swift */,
 				F765826B2146E334007EA7C3 /* QuestionViewController.swift */,
+				F765826D2146F15A007EA7C3 /* FinalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				F76582602146D60E007EA7C3 /* WordEntryStoreImpl.swift in Sources */,
 				F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */,
 				F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */,
+				F765826E2146F15A007EA7C3 /* FinalViewController.swift in Sources */,
 				F765826C2146E334007EA7C3 /* QuestionViewController.swift in Sources */,
 				F76582632146D86E007EA7C3 /* ViewModel.swift in Sources */,
 				F765826A2146DD12007EA7C3 /* Array+Sample.swift in Sources */,

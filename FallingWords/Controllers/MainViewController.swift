@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     private let bag = DisposeBag()
     
     var questionVC: QuestionViewController!;
+    var finalVC: FinalViewController!;
     
     var viewModel:WordEntryViewModel!
     
@@ -33,6 +34,8 @@ class MainViewController: UIViewController {
         self.questionVC = self.storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
         self.questionVC.viewModel = self.viewModel
         
+        self.finalVC = self.storyboard?.instantiateViewController(withIdentifier: "FinalViewController") as! FinalViewController
+        
         viewModel
             .viewStateStream
             .subscribe(onNext: { (newViewState, oldViewState) in
@@ -44,6 +47,10 @@ class MainViewController: UIViewController {
                 
                 if oldViewState?.isDataLoaded == false && newViewState.isDataLoaded == true {
                     self.navigationController?.pushViewController(self.questionVC, animated: true)
+                }
+                
+                if newViewState.isGameOver == true {
+                    self.navigationController?.pushViewController(self.finalVC, animated: true)
                 }
             })
             .disposed(by: bag)
