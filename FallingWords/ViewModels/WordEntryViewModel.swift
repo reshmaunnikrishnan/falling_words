@@ -13,15 +13,26 @@ import RealmSwift
 
 struct WordEntryViewState: ViewState {
     let isLoading: Bool
+    let isDataLoaded: Bool
+    
+    var currentWordEntry: WordEntry? = nil
 
-    init(isLoading:Bool = false) {
+    init(isLoading:Bool = false, isDataLoaded:Bool = false) {
         self.isLoading = isLoading
+        self.isDataLoaded = isDataLoaded
+    }
+    
+    mutating func setCurrentEntry() {
+        let realm = try! Realm()
+        
+        self.currentWordEntry = realm.objects(WordEntry.self).filter("is_answered == false").first
     }
 }
 
 class WordEntryViewModel: ViewModel<WordEntryViewState> {
     internal enum Command:Int {
         case FetchWordEntries = 1
+        case FetchQuestion = 2
     }
 
     internal var wordEntryStore:WordEntryStore?
@@ -38,9 +49,13 @@ class WordEntryViewModel: ViewModel<WordEntryViewState> {
                     .fetchWordEntries()
                     .asObservable()
                     .subscribe({ (_) in
-                        self.viewState = WordEntryViewState()
+                        self.viewState = WordEntryViewState(isDataLoaded: true)
                     })
                     .disposed(by: bag)
+                
+                break
+            case .FetchQuestion:
+                viewState?.setCurrentEntry()
                 
                 break
             }

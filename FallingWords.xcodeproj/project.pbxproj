@@ -22,6 +22,7 @@
 		F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582642146D894007EA7C3 /* ViewModelProtocol.swift */; };
 		F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */; };
 		F765826A2146DD12007EA7C3 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582692146DD12007EA7C3 /* Array+Sample.swift */; };
+		F765826C2146E334007EA7C3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765826B2146E334007EA7C3 /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		F76582642146D894007EA7C3 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryViewModel.swift; sourceTree = "<group>"; };
 		F76582692146DD12007EA7C3 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
+		F765826B2146E334007EA7C3 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,16 +125,16 @@
 		F74CEE832146CF12000FC325 /* FallingWords */ = {
 			isa = PBXGroup;
 			children = (
-				F76582682146DCF5007EA7C3 /* Helpers */,
-				F76582612146D847007EA7C3 /* ViewModels */,
 				F74CEE842146CF12000FC325 /* AppDelegate.swift */,
 				F74CEE8B2146CF13000FC325 /* Assets.xcassets */,
 				F76582582146D203007EA7C3 /* Controllers */,
+				F76582682146DCF5007EA7C3 /* Helpers */,
 				F74CEE902146CF13000FC325 /* Info.plist */,
 				F74CEE8D2146CF13000FC325 /* LaunchScreen.storyboard */,
 				F74CEE882146CF12000FC325 /* Main.storyboard */,
 				F765825D2146D5C7007EA7C3 /* Models */,
 				F765825E2146D5D3007EA7C3 /* Stores */,
+				F76582612146D847007EA7C3 /* ViewModels */,
 			);
 			path = FallingWords;
 			sourceTree = "<group>";
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				F74CEE862146CF12000FC325 /* MainViewController.swift */,
+				F765826B2146E334007EA7C3 /* QuestionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				F76582602146D60E007EA7C3 /* WordEntryStoreImpl.swift in Sources */,
 				F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */,
 				F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */,
+				F765826C2146E334007EA7C3 /* QuestionViewController.swift in Sources */,
 				F76582632146D86E007EA7C3 /* ViewModel.swift in Sources */,
 				F765826A2146DD12007EA7C3 /* Array+Sample.swift in Sources */,
 				F765825A2146D572007EA7C3 /* WordEntryStore.swift in Sources */,

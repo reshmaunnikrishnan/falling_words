@@ -15,6 +15,9 @@ class WordEntry: Object {
     
     @objc dynamic var wrong_text_spa:String = ""
     
+    @objc dynamic var is_answered:Bool = false
+    @objc dynamic var point:Int = 0
+    
     // Primary Key required for saving
     override class func primaryKey() -> String? {
         return "text_eng"

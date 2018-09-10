@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     
     private let bag = DisposeBag()
     
+    var questionVC: QuestionViewController!;
+    
     var viewModel:WordEntryViewModel!
     
     override func viewDidLoad() {
@@ -28,14 +30,21 @@ class MainViewController: UIViewController {
         
         self.viewModel = WordEntryViewModel().injectWordEntryStore(wordEntryStore: WordEntryStoreImpl())
         
+        self.questionVC = self.storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+        self.questionVC.viewModel = self.viewModel
+        
         viewModel
             .viewStateStream
             .subscribe(onNext: { (newViewState, oldViewState) in
                 let newViewState = newViewState as! WordEntryViewState
-                let _ = oldViewState as? WordEntryViewState
+                let oldViewState = oldViewState as? WordEntryViewState
                 
                 self.activityIndicator.isHidden = !newViewState.isLoading
                 self.activityIndicator.startAnimating()
+                
+                if oldViewState?.isDataLoaded == false && newViewState.isDataLoaded == true {
+                    self.navigationController?.pushViewController(self.questionVC, animated: true)
+                }
             })
             .disposed(by: bag)
         
