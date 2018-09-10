@@ -18,6 +18,9 @@
 		F765825A2146D572007EA7C3 /* WordEntryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582592146D572007EA7C3 /* WordEntryStore.swift */; };
 		F765825C2146D5AC007EA7C3 /* WordEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765825B2146D5AC007EA7C3 /* WordEntry.swift */; };
 		F76582602146D60E007EA7C3 /* WordEntryStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F765825F2146D60E007EA7C3 /* WordEntryStoreImpl.swift */; };
+		F76582632146D86E007EA7C3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582622146D86E007EA7C3 /* ViewModel.swift */; };
+		F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582642146D894007EA7C3 /* ViewModelProtocol.swift */; };
+		F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		F76582592146D572007EA7C3 /* WordEntryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryStore.swift; sourceTree = "<group>"; };
 		F765825B2146D5AC007EA7C3 /* WordEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntry.swift; sourceTree = "<group>"; };
 		F765825F2146D60E007EA7C3 /* WordEntryStoreImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryStoreImpl.swift; sourceTree = "<group>"; };
+		F76582622146D86E007EA7C3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F76582642146D894007EA7C3 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		F74CEE832146CF12000FC325 /* FallingWords */ = {
 			isa = PBXGroup;
 			children = (
+				F76582612146D847007EA7C3 /* ViewModels */,
 				F74CEE842146CF12000FC325 /* AppDelegate.swift */,
 				F74CEE8B2146CF13000FC325 /* Assets.xcassets */,
 				F76582582146D203007EA7C3 /* Controllers */,
@@ -159,6 +166,16 @@
 				F765825F2146D60E007EA7C3 /* WordEntryStoreImpl.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		F76582612146D847007EA7C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F76582622146D86E007EA7C3 /* ViewModel.swift */,
+				F76582642146D894007EA7C3 /* ViewModelProtocol.swift */,
+				F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +408,9 @@
 				F74CEE872146CF12000FC325 /* MainViewController.swift in Sources */,
 				F74CEE852146CF12000FC325 /* AppDelegate.swift in Sources */,
 				F76582602146D60E007EA7C3 /* WordEntryStoreImpl.swift in Sources */,
+				F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */,
+				F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */,
+				F76582632146D86E007EA7C3 /* ViewModel.swift in Sources */,
 				F765825A2146D572007EA7C3 /* WordEntryStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
