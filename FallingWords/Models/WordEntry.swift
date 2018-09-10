@@ -46,4 +46,19 @@ class WordEntry: Object {
             self.wrong_text_spa = (randomEntries.first?.text_spa)!
         }
     }
+    
+    func markDone(answer: String) -> Bool {
+        let realm = try! Realm()
+        
+        let answerCorrect = (self.text_spa == answer)
+        
+        try! realm.write {
+            if answerCorrect {
+                self.point = 1
+            }
+            self.is_answered = true
+        }
+        
+        return answerCorrect
+    }
 }

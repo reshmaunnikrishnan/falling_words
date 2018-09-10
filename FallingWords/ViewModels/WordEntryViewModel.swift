@@ -16,6 +16,7 @@ struct WordEntryViewState: ViewState {
     let isDataLoaded: Bool
     
     var currentWordEntry: WordEntry? = nil
+    var currentWordEntryCorrect: Bool? = nil
 
     init(isLoading:Bool = false, isDataLoaded:Bool = false) {
         self.isLoading = isLoading
@@ -27,12 +28,17 @@ struct WordEntryViewState: ViewState {
         
         self.currentWordEntry = realm.objects(WordEntry.self).filter("is_answered == false").first
     }
+    
+    mutating func answerQuestion(answer: String) {
+        self.currentWordEntryCorrect = self.currentWordEntry?.markDone(answer: answer)
+    }
 }
 
 class WordEntryViewModel: ViewModel<WordEntryViewState> {
     internal enum Command:Int {
         case FetchWordEntries = 1
         case FetchQuestion = 2
+        case AnswerQuestion = 3
     }
 
     internal var wordEntryStore:WordEntryStore?
@@ -56,6 +62,10 @@ class WordEntryViewModel: ViewModel<WordEntryViewState> {
                 break
             case .FetchQuestion:
                 viewState?.setCurrentEntry()
+                
+                break
+            case .AnswerQuestion:
+                self.viewState?.answerQuestion(answer: data as! String)
                 
                 break
             }

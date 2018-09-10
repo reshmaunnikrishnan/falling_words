@@ -38,10 +38,53 @@ class QuestionViewController: UIViewController {
                     self.option1.setTitle(newViewState.currentWordEntry?.text_spa, for: .normal)
                     self.option2.setTitle(newViewState.currentWordEntry?.wrong_text_spa, for: .normal)
                 }
+                
+                if newViewState.currentWordEntryCorrect != nil {
+                    if newViewState.currentWordEntryCorrect == true {
+                        self.response.text = "Good Job! That is the right answer!"
+                        self.response.textColor = UIColor.green
+                    }
+                    
+                    if newViewState.currentWordEntryCorrect == false {
+                        self.response.text = "Oops! That is the wrong answer!"
+                        self.response.textColor = UIColor.red
+                    }
+                    
+                    Observable<Int>
+                        .timer(
+                            RxTimeInterval(1),
+                            scheduler: MainScheduler.instance)
+                        .subscribe(onNext: { (_) in
+                            self.viewModel.execute(command: WordEntryViewModel.Command.FetchQuestion)
+                        })
+                        .disposed(by: self.bag)
+                    
+                } else {
+                    self.response.text = ""
+                }
             })
             .disposed(by: bag)
         
         self.viewModel.execute(command: WordEntryViewModel.Command.FetchQuestion)
+        
+        option1
+            .rx
+            .tap
+            .subscribe(onNext: { [weak self] (_ : Void) in
+                self?.viewModel.execute(
+                    command: WordEntryViewModel.Command.AnswerQuestion,
+                    data: self?.option1.titleLabel?.text as AnyObject)
+            })
+            .disposed(by: bag)
+        option2
+            .rx
+            .tap
+            .subscribe(onNext: { [weak self] (_ : Void) in
+                self?.viewModel.execute(
+                    command: WordEntryViewModel.Command.AnswerQuestion,
+                    data: self?.option2.titleLabel?.text as AnyObject)
+            })
+            .disposed(by: bag)
     }
 
     override func didReceiveMemoryWarning() {
