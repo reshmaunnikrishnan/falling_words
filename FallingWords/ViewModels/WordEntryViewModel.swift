@@ -37,7 +37,7 @@ class WordEntryViewModel: ViewModel<WordEntryViewState> {
                 self.wordEntryStore!
                     .fetchWordEntries()
                     .asObservable()
-                    .subscribe({ (wordEntries) in
+                    .subscribe({ (_) in
                         self.viewState = WordEntryViewState()
                     })
                     .disposed(by: bag)

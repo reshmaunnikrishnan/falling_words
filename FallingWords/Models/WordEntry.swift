@@ -29,4 +29,18 @@ class WordEntry: Object {
         
         return self
     }
+    
+    func populateWrongAnswer() {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "text_spa != %@", self.text_spa)
+        
+        let randomEntries = realm
+            .objects(WordEntry.self)
+            .filter(predicate)
+            .sample(1)
+        try! realm.write {
+            self.wrong_text_spa = (randomEntries.first?.text_spa)!
+        }
+    }
 }

@@ -21,6 +21,7 @@
 		F76582632146D86E007EA7C3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582622146D86E007EA7C3 /* ViewModel.swift */; };
 		F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582642146D894007EA7C3 /* ViewModelProtocol.swift */; };
 		F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */; };
+		F765826A2146DD12007EA7C3 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76582692146DD12007EA7C3 /* Array+Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		F76582622146D86E007EA7C3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F76582642146D894007EA7C3 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntryViewModel.swift; sourceTree = "<group>"; };
+		F76582692146DD12007EA7C3 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		F74CEE832146CF12000FC325 /* FallingWords */ = {
 			isa = PBXGroup;
 			children = (
+				F76582682146DCF5007EA7C3 /* Helpers */,
 				F76582612146D847007EA7C3 /* ViewModels */,
 				F74CEE842146CF12000FC325 /* AppDelegate.swift */,
 				F74CEE8B2146CF13000FC325 /* Assets.xcassets */,
@@ -176,6 +179,14 @@
 				F76582662146D8D3007EA7C3 /* WordEntryViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F76582682146DCF5007EA7C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F76582692146DD12007EA7C3 /* Array+Sample.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +422,7 @@
 				F76582652146D894007EA7C3 /* ViewModelProtocol.swift in Sources */,
 				F76582672146D8D3007EA7C3 /* WordEntryViewModel.swift in Sources */,
 				F76582632146D86E007EA7C3 /* ViewModel.swift in Sources */,
+				F765826A2146DD12007EA7C3 /* Array+Sample.swift in Sources */,
 				F765825A2146D572007EA7C3 /* WordEntryStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

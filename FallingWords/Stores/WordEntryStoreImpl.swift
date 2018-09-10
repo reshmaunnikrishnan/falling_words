@@ -23,6 +23,13 @@ class WordEntryStoreImpl: WordEntryStore {
                 guard let items = json as? [AnyObject] else {return []}
                 return items.map {WordEntry(value: $0).save()}
             })
+            .map({ (wordEntries) -> [WordEntry] in
+                wordEntries.forEach({ (wordEntry) in
+                    wordEntry.populateWrongAnswer()
+                })
+                
+                return wordEntries
+            })
             .asDriver(onErrorJustReturn: [])
     }
 }
