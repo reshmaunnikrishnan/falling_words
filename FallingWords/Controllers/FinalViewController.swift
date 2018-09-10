@@ -10,10 +10,14 @@ import UIKit
 
 class FinalViewController: UIViewController {
 
+    @IBOutlet weak var points: UILabel!
+    
+    var viewModel:WordEntryViewModel!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        points.text = String(describing: (viewModel.viewState?.totalPoints)!)
     }
 
     override func didReceiveMemoryWarning() {

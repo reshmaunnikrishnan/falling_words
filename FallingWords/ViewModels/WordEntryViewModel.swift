@@ -19,6 +19,8 @@ struct WordEntryViewState: ViewState {
     
     var currentWordEntry: WordEntry? = nil
     var currentWordEntryCorrect: Bool? = nil
+    
+    var totalPoints: Int = 0
 
     init(isLoading:Bool = false, isDataLoaded:Bool = false) {
         self.isLoading = isLoading
@@ -31,6 +33,7 @@ struct WordEntryViewState: ViewState {
         
         self.currentWordEntry = realm.objects(WordEntry.self).filter("is_answered == false").first
         self.currentWordEntryCorrect = nil
+        self.totalPoints = realm.objects(WordEntry.self).sum(ofProperty: "point")
         
         if self.currentWordEntry == nil {
             self.isGameOver = true

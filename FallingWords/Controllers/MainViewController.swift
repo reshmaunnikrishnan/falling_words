@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         self.questionVC.viewModel = self.viewModel
         
         self.finalVC = self.storyboard?.instantiateViewController(withIdentifier: "FinalViewController") as! FinalViewController
+        self.finalVC.viewModel = self.viewModel
         
         viewModel
             .viewStateStream
