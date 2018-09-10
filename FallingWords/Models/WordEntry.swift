@@ -18,6 +18,8 @@ class WordEntry: Object {
     @objc dynamic var is_answered:Bool = false
     @objc dynamic var point:Int = 0
     
+    private var randomAnswer:String? = nil
+    
     // Primary Key required for saving
     override class func primaryKey() -> String? {
         return "text_eng"
@@ -31,6 +33,15 @@ class WordEntry: Object {
         }
         
         return self
+    }
+    
+    func possibleAnswer() -> String {
+        if randomAnswer == nil {
+            randomAnswer = [ self.text_spa,
+                             self.wrong_text_spa].sample
+        }
+        
+        return randomAnswer!
     }
     
     func populateWrongAnswer() {
@@ -47,10 +58,10 @@ class WordEntry: Object {
         }
     }
     
-    func markDone(answer: String) -> Bool {
+    func markDone(answeredAs: Bool) -> Bool {
         let realm = try! Realm()
         
-        let answerCorrect = (self.text_spa == answer)
+        let answerCorrect = ((self.text_spa == randomAnswer) == answeredAs)
         
         try! realm.write {
             if answerCorrect {

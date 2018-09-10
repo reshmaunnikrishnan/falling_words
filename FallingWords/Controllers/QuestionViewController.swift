@@ -13,11 +13,10 @@ import RxCocoa
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var question: UILabel!
-    
-    @IBOutlet weak var option1: UIButton!
-    @IBOutlet weak var option2: UIButton!
-    
+    @IBOutlet weak var option: UILabel!
     @IBOutlet weak var response: UILabel!
+    @IBOutlet weak var answerCorrect: UIButton!
+    @IBOutlet weak var answerWrong: UIButton!
     
     var viewModel:WordEntryViewModel!;
     
@@ -35,8 +34,7 @@ class QuestionViewController: UIViewController {
                 
                 if newViewState.currentWordEntry != nil && oldViewState?.currentWordEntry != newViewState.currentWordEntry {
                     self.question.text = newViewState.currentWordEntry?.text_eng
-                    self.option1.setTitle(newViewState.currentWordEntry?.text_spa, for: .normal)
-                    self.option2.setTitle(newViewState.currentWordEntry?.wrong_text_spa, for: .normal)
+                    self.option.text = newViewState.currentWordEntry?.possibleAnswer()
                 }
                 
                 if newViewState.currentWordEntryCorrect != nil {
@@ -61,30 +59,45 @@ class QuestionViewController: UIViewController {
                     
                 } else {
                     self.response.text = ""
+                    self.enableButtons()
                 }
             })
             .disposed(by: bag)
         
         self.viewModel.execute(command: WordEntryViewModel.Command.FetchQuestion)
         
-        option1
+        answerCorrect
             .rx
             .tap
             .subscribe(onNext: { [weak self] (_ : Void) in
+                self?.disableButtons()
                 self?.viewModel.execute(
                     command: WordEntryViewModel.Command.AnswerQuestion,
-                    data: self?.option1.titleLabel?.text as AnyObject)
+                    data: true as AnyObject)
             })
             .disposed(by: bag)
-        option2
+        
+        answerWrong
             .rx
             .tap
             .subscribe(onNext: { [weak self] (_ : Void) in
+                self?.disableButtons()
                 self?.viewModel.execute(
                     command: WordEntryViewModel.Command.AnswerQuestion,
-                    data: self?.option2.titleLabel?.text as AnyObject)
+                    data: false as AnyObject)
             })
             .disposed(by: bag)
+        
+    }
+    
+    func disableButtons() {
+        answerCorrect.isEnabled = false
+        answerWrong.isEnabled = false
+    }
+    
+    func enableButtons() {
+        answerCorrect.isEnabled = true
+        answerWrong.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {

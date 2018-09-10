@@ -42,8 +42,8 @@ struct WordEntryViewState: ViewState {
         }
     }
     
-    mutating func answerQuestion(answer: String) {
-        self.currentWordEntryCorrect = self.currentWordEntry?.markDone(answer: answer)
+    mutating func answerQuestion(answeredAs: Bool) {
+        self.currentWordEntryCorrect = self.currentWordEntry?.markDone(answeredAs: answeredAs)
     }
 }
 
@@ -78,7 +78,7 @@ class WordEntryViewModel: ViewModel<WordEntryViewState> {
                 
                 break
             case .AnswerQuestion:
-                self.viewState?.answerQuestion(answer: data as! String)
+                self.viewState?.answerQuestion(answeredAs: data as! Bool)
                 
                 break
             }
